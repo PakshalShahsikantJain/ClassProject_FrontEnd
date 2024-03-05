@@ -1,0 +1,21 @@
+/* styles.css */
+
+
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+.spacer2 {
+  flex : 0.16 0.16 auto;
+}  
+  .mat-menu-button {
+    display: none; /* Hide the menu button by default */
+  }
+  
+  @media screen and (max-width: 400px) {
+    .mat-menu-button {
+      display: block; /* Display the menu button on smaller screens */
+    }
+  }
+
+  

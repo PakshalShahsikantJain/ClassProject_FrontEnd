@@ -1,0 +1,25 @@
+
+.spacer2 {
+    flex : 0.087 0.087 auto;
+  } 
+
+  .container {
+    margin-top: 5%;
+  }
+
+.example-container {
+  text-align: center;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-container .mat-form-field {
+  width: 330px;
+}
+
+.example-container form {
+  margin-bottom: 5px;
+}
+
+  

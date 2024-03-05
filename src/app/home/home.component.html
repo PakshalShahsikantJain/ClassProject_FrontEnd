@@ -1,0 +1,50 @@
+<div>
+  <carousel>
+    <slide *ngFor="let slide of slides">
+      <img [src]="slide.image" style="width: 100%;">
+      <div class="carousel-caption">
+        <h1>{{ slide.title }}</h1>
+      </div>
+    </slide>
+  </carousel>  
+</div>
+
+<div>
+  <div class="text">
+    <h1>
+      BATCHES
+    </h1>
+  </div>
+  <div class="divider-container">
+    <mat-divider class="custom-divider"></mat-divider>
+  </div>
+  <div class="cardDisplay container"> 
+    <mat-card *ngFor="let item of items" class="example-card">
+      <mat-card-content>
+        <div style="position: relative;">
+          <img mat-card-image [src]="item.image" style="height: 100%;" alt="Image">
+          <div style="position: absolute; top: 86%; left: 40%; transform: translate(-50%, -50%); font-size: small ;display: flex;">
+            <button routerLink="/register" style="margin-right: 10px;" mat-raised-button color="primary">
+              Register
+            </button>
+            <button [routerLink]="['/details', item.title]"  mat-raised-button color="accent">
+              View Details
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div class="text2">
+  <h1>
+    ABOUT US
+  </h1>
+</div>
+<div class="divider-container2">
+  <mat-divider class="custom-divider2"></mat-divider>
+</div>
+<div class="container">
+  <app-aboutus></app-aboutus>
+</div>

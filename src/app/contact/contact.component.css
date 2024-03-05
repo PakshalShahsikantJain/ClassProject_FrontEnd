@@ -1,0 +1,152 @@
+.spacer2 {
+    flex : 0.087 0.087 auto;
+  } 
+
+  .no-underline {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the default text color */
+    font-size: small;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    gap:20px; /* Gap between cards */
+  
+    /* Adjust layout for smaller screens */
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr; /* Change to single column layout */
+    }
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .icon {
+    display: inline-flex; /* Ensure the icon stays inline */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
+    border-radius: 50%; /* Make the border rounded to create a circle */
+    width: 40px; /* Set the width of the icon */
+    height: 40px; /* Set the height of the icon */
+  }
+  
+  .label {
+    font-size: 16px;
+    margin-left: 5%;
+  }
+  
+  .card1 {
+    flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis */
+  }
+
+  /* Card 2 takes 600px width */
+  .card2 {
+    flex: 1 1 700px; /* Flex-grow, flex-shrink, flex-basis */
+    width: 700px; /* Set a max-width to ensure it doesn't exceed 600px */
+  }
+  
+  .example-container .mat-form-field + .mat-form-field {
+    margin-left: 5px;
+  }
+  
+  .example-container .mat-form-field {
+    width: 316px;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }
+  
+  .icon-link {
+    margin-right: 20px; /* Add margin between icons */
+     /* Icon color */
+    text-decoration: none; /* Remove underline */
+    font-size: x-large;
+
+    display: inline-flex; /* Ensure the icon stays inline */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
+    border-radius: 50%; /* Make the border rounded to create a circle */
+    width: 40px; /* Set the width of the icon */
+    height: 40px; /* Set the height of the icon */
+  }
+  /* Media query for smaller screens */
+  @media screen and (max-width: 1270px) {
+    .contact-item {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: flex-start;
+    }
+
+    .card {
+      width: 100%; /* Stack cards vertically for smaller screens */
+    }
+    
+    .message {
+      width: 100%;
+    }
+    .example-container .mat-form-field {
+      width: 100%;
+    }
+
+    .example-container .mat-form-field + .mat-form-field {
+      width: 100%;
+    }
+    .card {
+      width: 100%; /* Stack cards vertically for smaller screens */
+    }
+
+    .icon {
+      display: inline-flex; /* Ensure the icon stays inline */
+      align-items: center; /* Center icon vertically */
+      justify-content: center; /* Center icon horizontally */
+      border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
+      border-radius: 50%; /* Make the border rounded to create a circle */
+      width: 40px; /* Set the width of the icon */
+      height: 40px; /* Set the height of the icon */
+      margin-right: 0%;
+    }
+
+    .label {
+      font-size: 16px;
+      margin-left: 0%;
+      margin-top: 2%;
+      margin-bottom: -5%;
+    }
+    .icon-link {
+      margin-right: 20px; /* Add margin between icons */
+       /* Icon color */
+      text-decoration: none; /* Remove underline */
+      font-size: large;
+  
+      display: inline-flex; /* Ensure the icon stays inline */
+      align-items: center; /* Center icon vertically */
+      justify-content: center; /* Center icon horizontally */
+      border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
+      border-radius: 50%; /* Make the border rounded to create a circle */
+      width: 40px; /* Set the width of the icon */
+      height: 40px; /* Set the height of the icon */
+    }
+  
+  }
+  
+  .social-icons {
+    display: flex; /* Use flexbox to arrange icons horizontally */
+  }
+    
+  .icon-link:last-child {
+    margin-right: 0; /* Remove margin from the last icon */
+  }

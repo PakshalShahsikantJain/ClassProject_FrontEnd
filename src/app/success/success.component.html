@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-title  class="title">Welcome {{FirstName}} {{LastName}}   To Programmer's Den Family</mat-card-title>
+    <mat-card-content color="primary">
+      <br>
+      <h2 style="font-family: monospace;">You Have Successfully Registered For Batch "{{Batch}}" </h2>
+      <h2 style="font-family: monospace;">Your Registration ID is RID : {{ RID }}</h2>
+      <h2 style="font-family: monospace;">Check Your Registered Mail ID For Further Details</h2>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button mat-raised-button routerLink="/home" color="primary">Home</button>
+      <button mat-button mat-raised-button routerLink="/register" color="accent">Back</button>
+    </mat-card-actions>
+</mat-card>
