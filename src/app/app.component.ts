@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from './loading.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isCollapsed: boolean = false;
   cartCount : number = 0;
-  constructor() {
+  constructor(public loadingService: LoadingService) {
     this.checkWidth();
     
     window.addEventListener('resize', () => {

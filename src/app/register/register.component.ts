@@ -64,36 +64,42 @@ export class RegisterComponent implements OnInit {
     var batch : String;
     var firstName : String;
     var lastName : String;
+    var email : String;
     var data : any;
     
-    this.save.saveData(this.userForm.value).subscribe(response => {
-      console.log(response);
-      
-      data = response;
-      firstName = data.firstName;
-      lastName = data.lastName;
-      rid = data.RID;
+    if (confirm('Are you sure you want to Submit Form ?')) 
+    {
+      this.save.saveData(this.userForm.value).subscribe(response => {
+        console.log(response);
+        
+        data = response;
+        firstName = data.firstName;
+        lastName = data.lastName;
+        rid = data.RID;
+        email = data.email;
 
-      for(var i = 0;i < this.Categories.length;i++)
-      {
-        if(data.batch == this.Categories[i].value)
+        for(var i = 0;i < this.Categories.length;i++)
         {
-          break;
+          if(data.batch == this.Categories[i].value)
+          {
+            break;
+          }
         }
-      }
-  
-      batch = this.Categories[i].Category;
-      console.log(batch);
-  
-      this.router.navigate(['/success'],
-      { 
-        queryParams: { 
-          'RID': rid,
-          'FirstName' : firstName,
-          'LastName' : lastName ,
-          'Batch' : batch
-        } 
+    
+        batch = this.Categories[i].Category;
+        console.log(batch);
+    
+        this.router.navigate(['/success'],
+        { 
+          queryParams: { 
+            'RID': rid,
+            'FirstName' : firstName,
+            'LastName' : lastName ,
+            'Batch' : batch,
+            'Email' : email,
+          } 
+        });
       });
-    });
+    }
   }
 }

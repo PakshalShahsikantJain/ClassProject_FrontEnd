@@ -1,3 +1,4 @@
+<app-loading *ngIf="loadingService.loading$ | async"></app-loading>
 <div>
   <mat-toolbar color="primary" style="height: 80px;    ;position: fixed;top: 0;left: 0;width: 100%;z-index: 1000;">
     <span class="spacer2"></span>
@@ -23,6 +24,7 @@
 </div>
 
 <div class="main-content">
+  <app-loading *ngIf="loadingService.loading$ | async"></app-loading>
   <router-outlet></router-outlet>
 </div>
 

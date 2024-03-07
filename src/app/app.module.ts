@@ -27,6 +27,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AboutusComponent,
     DetailsComponent,
     SuccessComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,9 +5,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SaveDataService {
+  
   private _saveDataUrl = "https://classproject-mean-backend.onrender.com/api/register";
   private _receiveDataUrl = "https://classproject-mean-backend.onrender.com/api/access";
   private _messageDataUrl = "https://classproject-mean-backend.onrender.com/api/message";
+
+
+  /*
+  private _saveDataUrl = "http://localhost:3000/api/register";
+  private _receiveDataUrl = "http://localhost:3000/api/access";
+  private _messageDataUrl = "http://localhost:3000/api/message";
+  */
 
   constructor(private http: HttpClient) { }
 
