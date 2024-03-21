@@ -21,13 +21,13 @@
 }
 
 .carousel-item img {
-  max-height: 600px; /* Adjust the value as needed */
+  max-height: 700px; /* Adjust the value as needed */
 }
 
 .text h1{
   text-align: center;
   font-family: monospace;
-  margin-top: 8%;
+  margin-top: 5%;
   margin-bottom: 2%;
   color: blue;
   font-size: 40px;
@@ -85,7 +85,9 @@
 
   .carousel {
     width: 100%;
+    height: auto;
   }
+
   .carousel-caption {
     right: 1px;
     top : 1px;

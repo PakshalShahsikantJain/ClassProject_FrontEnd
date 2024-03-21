@@ -3,6 +3,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 import { ScrollToTopService } from '../scroll-to-top.service';
 import { SaveDataService } from '../save-data.service';
 import { LoadingService } from '../loading.service';
+import { DownloadpdfService } from '../downloadpdf.service';
 
 @Component({
   selector: 'app-details',
@@ -14,13 +15,15 @@ export class DetailsComponent implements OnInit {
 
   items : any[] = [];
 
-  constructor(private route: ActivatedRoute,private loadingService: LoadingService,private scroll : ScrollToTopService,private data : SaveDataService) 
+  constructor(private route: ActivatedRoute,private loadingService: LoadingService,
+    private scroll : ScrollToTopService,private data : SaveDataService,private dobj : DownloadpdfService) 
   { 
   }
 
   ngOnInit(): void {
     this.loadingService.setLoadingState(true);
-
+    this.scroll.scrollToTopOnRouterNavigation();
+    
     this.data.receiveData().subscribe(response => {
       this.items = response;
 
@@ -30,7 +33,44 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.Title = params['title']
     });
+  }
+
+  DownloadPDF()
+  {
+    var filename : string = " ";
     
-    this.scroll.scrollToTopOnRouterNavigation();
+    switch(this.Title) 
+    {
+      case "C, C++ and Java Programming" :
+        {
+          filename = "1.pdf";
+          break;
+        }
+      
+      case "MEAN(MongoDB, Express, Angular, Node JS) Full Stack Web Development" :
+        {
+          filename = "MEAN.pdf";
+          break;
+        }
+    
+      case "Programming in GoLang" :
+        {
+          filename = "GoLang.pdf";
+          break;
+        }
+  
+      case "Programming in Python" :
+        {
+          filename = "4.pdf";
+          break;
+        }
+      default :
+      {
+        console.log("Batch Not Found");
+        return;
+      }
+    }
+
+    this.dobj.downloadPDF(filename);
   }
 }

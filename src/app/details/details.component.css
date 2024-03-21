@@ -36,6 +36,14 @@
     width: 700px; /* Set a max-width to ensure it doesn't exceed 600px */
   }
   
+  .title {
+    font-family: monospace;
+    font-size:xx-large;
+  }
+
+  .content {
+    margin-left: 2%;
+  }
   
   /* Media query for smaller screens */
   @media screen and (max-width: 1270px) {
@@ -46,6 +54,18 @@
 
     .card img {
         max-width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-family: monospace;
+      font-size:xx-large;
+      margin-left: -5%;
+    }
+
+    .content {
+      margin-left: 0%;
     }
   }
   

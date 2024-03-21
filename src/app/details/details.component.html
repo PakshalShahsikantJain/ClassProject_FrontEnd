@@ -9,29 +9,29 @@
         <mat-card *ngIf="i.title === Title" class="card card2">
           <mat-card-header>
               <mat-card-title>
-                <h1 style="font-family: monospace;font-size:xx-large;margin-left: -3%;">
+                <h1 class="title">
                   {{i.title}}
                 </h1>
               </mat-card-title>
           </mat-card-header>
-          <mat-card-content>
+          <mat-card-content class="content">
             <mat-divider></mat-divider>
             <h2>
-                Start Date : <h3 style="display: inline-block;">{{i.startDate}}</h3>
+                Start Date : <h3 style="display: inline-block;font-size: medium;">{{i.startDate}}</h3>
             </h2>
             <mat-divider></mat-divider>
             <h2>
                 Duration : 
-                <h3 style="display: inline-block;">{{i.duration}}</h3>
+                <h3 style="display: inline-block;font-size: medium;">{{i.duration}}</h3>
             </h2>
             <mat-divider></mat-divider>
             <h2>
                 Timings : 
-                <h3 style="display: inline-block;">
+                <h3 style="display: inline-block;font-size:medium;">
                     {{i.Timings}}
                 </h3>
             </h2>
-            <!--<button mat-raised-button style="margin-right: 10px;" color="accent">Download Contents</button>-->
+            <button mat-raised-button style="margin-right: 10px;" (click)="DownloadPDF()" color="accent">Download Contents</button>
             <button mat-raised-button style="margin-right: 10px;" routerLink="/register" color="primary">Register</button>
           </mat-card-content>
         </mat-card>

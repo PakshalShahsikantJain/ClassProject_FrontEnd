@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-loading',
   template: `
     <div class="loading-overlay">
-      <div class="spinner"></div>
-      <h1 class="text">Programmer's Den Loading Soon...!!</h1>
+      <mat-spinner class="spinner"></mat-spinner>
+      <h1 class="text">Programmer's Den Loading Soon.<br> Sorry To Keep You Waiting..!!</h1>
     </div>
   `,
   styleUrls: ['./loading.component.css']

@@ -28,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoadingComponent } from './loading/loading.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DownloadpdfService } from './downloadpdf.service';
 
 @NgModule({
   declarations: [
@@ -61,9 +63,10 @@ import { LoadingComponent } from './loading/loading.component';
     CarouselModule.forRoot(),
     MatBadgeModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [DownloadpdfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
