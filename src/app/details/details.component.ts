@@ -49,13 +49,13 @@ export class DetailsComponent implements OnInit {
       
       case "MEAN(MongoDB, Express, Angular, Node JS) Full Stack Web Development" :
         {
-          filename = "MEAN.pdf";
+          filename = "2.pdf";
           break;
         }
     
       case "Programming in GoLang" :
         {
-          filename = "GoLang.pdf";
+          filename = "3.pdf";
           break;
         }
   

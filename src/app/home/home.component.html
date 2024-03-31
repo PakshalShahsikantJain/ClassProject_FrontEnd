@@ -24,8 +24,11 @@
         <div style="position: relative;">
           <img mat-card-image [src]="item.image" style="height: 100%;" alt="Image">
           <div style="position: absolute; top: 86%; left: 40%; transform: translate(-50%, -50%); font-size: small ;display: flex;">
-            <button routerLink="/register" style="margin-right: 10px;" mat-raised-button color="primary">
+            <button *ngIf="item.status ==='Active'" routerLink="/register" style="margin-right: 10px;" mat-raised-button color="primary">
               Register
+            </button>
+            <button *ngIf="item.status !=='Active'" style="margin-left: 30px;margin-right: 10px; " mat-raised-button color="warn">
+              Registration Closed
             </button>
             <button [routerLink]="['/details', item.title]"  mat-raised-button color="accent">
               View Details
