@@ -17,27 +17,10 @@ export class RegisterComponent implements OnInit {
   
   paymentOptions = ['Cash ', 'UPI', 'Other '];
   
-  Categories = [
-    {
-      'value' : 'MEAN',
-      'Category' : 'MEAN Stack Web Development'
-    },
-    {
-      'value' : 'CCJ',
-      'Category' : 'C, C++ and Java Programming',
-    },
-    {
-      'value' : 'GO',
-      'Category' : 'Programming in GoLang',
-    },
-    {
-      'value' : 'PY',
-      'Category' : 'Programming in Python'
-    },
-  ];
+  Batches : any[] = [];  
 
   constructor(private formBuilder: FormBuilder,private scroll : ScrollToTopService,
-    private save : SaveDataService,private router : Router) { 
+    private sobj : SaveDataService,private router : Router) { 
     this.userForm = this.formBuilder.group({
       firstName: ['', [Validators.required,ValidataionService.NameValidator]],
       middleName: ['', ValidataionService.NameValidator],
@@ -57,6 +40,16 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.scroll.scrollToTopOnRouterNavigation();
+    this.sobj.receiveData().subscribe((response)=>{
+      console.log(response);
+      for(var i = 0;i < response.length;i++)
+      {
+        if(response[i].status != "Inactive")
+        {
+          this.Batches.push(response[i]);
+        }
+      }
+    })
   }
 
   Save() {
@@ -69,7 +62,7 @@ export class RegisterComponent implements OnInit {
     
     if (confirm('Are you sure you want to Submit Form ?')) 
     {
-      this.save.saveData(this.userForm.value).subscribe(response => {
+      this.sobj.saveData(this.userForm.value).subscribe(response => {
         console.log(response);
         
         data = response;
@@ -78,15 +71,15 @@ export class RegisterComponent implements OnInit {
         rid = data.RID;
         email = data.email;
 
-        for(var i = 0;i < this.Categories.length;i++)
+        for(var i = 0;i < this.Batches.length;i++)
         {
-          if(data.batch == this.Categories[i].value)
+          if(data.batch == this.Batches[i].bid)
           {
             break;
           }
         }
     
-        batch = this.Categories[i].Category;
+        batch = this.Batches[i].batch;
         console.log(batch);
     
         this.router.navigate(['/success'],

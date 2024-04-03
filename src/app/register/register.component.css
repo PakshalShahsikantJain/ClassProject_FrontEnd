@@ -1,3 +1,6 @@
+.mat-option.custom-mat-option {
+  min-height: 24px; /* Adjust this value as per your requirement */
+}
 
 .spacer2 {
     flex : 0.087 0.087 auto;

@@ -73,13 +73,13 @@
                 <mat-form-field  appearance="fill">
                     <mat-label>Select Batch</mat-label>
                     <mat-select formControlName="batch">
-                        <mat-option *ngFor="let category of Categories" [value]="category.value">
-                            {{category.Category}}
+                        <mat-option *ngFor="let batch of Batches" [value]="batch.bid">
+                            <p *ngIf="batch.status !== 'Inactive'">{{batch.batch}}</p>
                         </mat-option>
                     </mat-select>
 
                     <mat-error *ngIf="userForm.get('batch')!.errors?.['required']">
-                        Please Select <strong>Category</strong>
+                        Please Select <strong>Batch</strong>
                     </mat-error>
                 </mat-form-field>
                 
