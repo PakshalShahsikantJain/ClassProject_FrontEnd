@@ -59,7 +59,7 @@
 
                 <mat-form-field  appearance="fill">
                     <mat-label>Email ID</mat-label>
-                    <input matInput formControlName="email" type="email" placeholder="abc@example.com">
+                    <input matInput formControlName="email" type="email" placeholder="e.g. : abc@gmail/hotmail/outlook.com">
                     <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngIf="userForm.get('email')!.errors?.['custom'] && !userForm.get('email')!.errors?.['required']">
                         Please enter a valid <strong>Email ID</strong>

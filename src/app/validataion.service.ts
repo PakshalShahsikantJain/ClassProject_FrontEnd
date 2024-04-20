@@ -46,9 +46,9 @@ export class ValidataionService {
   {
     const value = control.value;
     // Perform custom validation logic here
-    if (value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+    if (value.match(/^[a-zA-Z0-9._%+-]+@(outlook|hotmail|gmail)\.com$/i)) {
       return null; // Validation passed
-    } else {
+    } else {  
       return { custom: true }; // Validation failed
     }
   }
