@@ -17,8 +17,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private loadingService: LoadingService,
     private scroll : ScrollToTopService,private data : SaveDataService,private dobj : DownloadpdfService) 
-  { 
-  }
+  {}
 
   ngOnInit(): void {
     this.loadingService.setLoadingState(true);
@@ -35,42 +34,8 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  DownloadPDF()
+  DownloadPDF(filename : any)
   {
-    var filename : string = " ";
-    
-    switch(this.Title) 
-    {
-      case "C, C++ and Java Programming" :
-        {
-          filename = "1.pdf";
-          break;
-        }
-      
-      case "MEAN(MongoDB, Express, Angular, Node JS) Full Stack Web Development" :
-        {
-          filename = "2.pdf";
-          break;
-        }
-    
-      case "Programming in GoLang" :
-        {
-          filename = "3.pdf";
-          break;
-        }
-  
-      case "Programming in Python" :
-        {
-          filename = "4.pdf";
-          break;
-        }
-      default :
-      {
-        console.log("Batch Not Found");
-        return;
-      }
-    }
-
     this.dobj.downloadPDF(filename);
   }
 }
