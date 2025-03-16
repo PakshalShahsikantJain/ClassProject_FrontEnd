@@ -1,0 +1,51 @@
+<div style="margin-top: 15%;margin-bottom: 10%;" class="container">
+  @for (i of items; track i) {
+    <div class="card-container">
+      @if (i.title === Title) {
+        <mat-card appearance="outlined" class="card card1">
+          <mat-card-content>
+            <img mat-image [src]="i.image" style="height: 100%;" alt="image">
+          </mat-card-content>
+        </mat-card>
+      }
+      @if (i.title === Title) {
+        <mat-card appearance="outlined" class="card card2">
+          <mat-card-header>
+            <mat-card-title>
+              <h1 class="title">
+                {{i.title}}
+              </h1>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="content">
+            <mat-divider></mat-divider>
+            <h2>
+              Start Date : <h3 style="display: inline-block;font-size: medium;">{{i.startDate}}</h3>
+            </h2>
+            <mat-divider></mat-divider>
+            <h2>
+              Duration :
+              <h3 style="display: inline-block;font-size: medium;">{{i.duration}}</h3>
+            </h2>
+            <mat-divider></mat-divider>
+            <h2>
+              Timings :
+              <h3 style="display: inline-block;font-size:medium;">
+                {{i.Timings}}
+              </h3>
+            </h2>
+            <mat-divider></mat-divider>
+            <h2>
+              Fees :
+              <h3 style="display: inline-block;font-size:medium;">
+                {{i.fees | currency:'INR'}}
+              </h3>
+            </h2>
+            <button mat-raised-button style="margin-right: 10px;" (click)="DownloadPDF(i.document)" color="accent">Download Contents</button>
+            <button mat-raised-button [hidden]="i.status !== 'Active'" style="margin-right: 10px;" routerLink="/register" color="primary">Register</button>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</div>

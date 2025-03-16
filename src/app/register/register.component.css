@@ -1,0 +1,35 @@
+.mat-mdc-option.custom-mat-option {
+  min-height: 24px; /* Adjust this value as per your requirement */
+}
+
+.spacer2 {
+    flex : 0.087 0.087 auto;
+  } 
+
+  .no-underline {
+    font-size: small;
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the default text color */
+  }
+  .container {
+    margin-top: 5%;
+    justify-content: center;
+  }
+
+.example-container {
+  text-align: center;
+}
+.example-container .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.example-container .mat-mdc-form-field {
+  width: 300px;
+}
+
+@media screen and (max-width : 600px) {
+  .container {
+    align-items: center;
+  }
+}
+  

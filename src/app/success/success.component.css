@@ -1,0 +1,26 @@
+.example-card {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: none;
+    box-shadow: none;
+}
+
+.example-card .title{
+    font-family: monospace;
+    font-size: 30px;
+}
+
+@media screen and (max-width : 600px) {
+
+    .example-card {
+        margin-top: 30%;
+    }
+    .example-card .title{
+        font-family: monospace;
+        font-size: 20px;
+    }
+
+    .example-card h2 {
+        font-size: large;
+    }
+}  

@@ -1,0 +1,178 @@
+<div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.9609389864772!2d73.67613618072286!3d18.719633637065883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b10032b7f3c9%3A0xc7174ad0afa6e089!2sRhythm%20Residency!5e1!3m2!1sen!2sin!4v1713209373868!5m2!1sen!2sin" allowfullscreen="" style="border: 0; width: 100%; height: 300px;">
+  </iframe>
+</div>
+<div>
+  <mat-toolbar style="background-color: rgb(232, 231, 231);">
+    <div class="container">
+      <a href="/home" style="color: #007bff;" class="no-underline">
+        Home
+      </a>
+      <a style="font-size: small;color: grey;">
+        / Contact Us
+      </a>
+    </div>
+  </mat-toolbar>
+</div>
+<div style="margin-top: 10%;" class="container">
+  <div class="card-container">
+    <mat-card appearance="outlined" class="card card1">
+      <mat-card-header>
+        <mat-card-title>
+          <h1 style="font-family: monospace;font-size:xx-large;">
+            Quick Contact
+          </h1>
+        </mat-card-title>
+      </mat-card-header>
+      <br>
+        <mat-card-content>
+          <div class="contact-item">
+            <mat-icon class="icon"><a href="#" style="text-decoration: none;">location_on</a></mat-icon>
+            <span class="label">
+              ADDRESS : <br>
+              Rhythm Residency, Talegaon Dabhade,Pune
+            </span>
+          </div>
+          <br>
+            <div class="contact-item">
+              <mat-icon class="icon">
+                <a href="tel:7058102806" style="text-decoration: none;">phone</a>
+              </mat-icon>
+              <span class="label">
+                PHONE : <br>
+                +91 7058102806
+              </span>
+            </div>
+            <br>
+              <div class="contact-item">
+                <mat-icon class="icon">
+                  <a href="#" style="text-decoration: none;">
+                    email
+                  </a>
+                </mat-icon>
+                <span class="label">
+                  EMAIL :<br>
+                  pakshal1256&#64;gmail.com
+                </span>
+              </div>
+              <mat-divider></mat-divider>
+              <br>
+                <div class="social-icons">
+                  <a href="#" class="icon-link">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <!--
+                  <a href="#" class="icon-link">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+
+                  <a href="#" class="icon-link">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  -->
+                  <a href="#" class="icon-link">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                  <a href="https://wa.me/7058102806" class="icon-link">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </div>
+              </mat-card-content>
+            </mat-card>
+
+            <mat-card appearance="outlined" style="background-color: white;" class="card card2">
+              <mat-card-header>
+                <mat-card-title>
+                  <h1 style="font-family: monospace;font-size:xx-large;">
+                    Send Message
+                  </h1>
+                </mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <div class="example-container">
+                  <form [formGroup]="contactForm">
+                    <mat-form-field style="margin-left: 5px;margin-right: 15px;;" appearance="fill">
+                      <mat-label>Your Name</mat-label>
+                      <input matInput formControlName="name" type="text">
+
+                      @if (contactForm.get('name')!.errors?.['custom']) {
+                        <mat-error>
+                          Please enter a valid Name
+                        </mat-error>
+                      }
+
+                      @if (contactForm.get('name')!.errors?.['required']) {
+                        <mat-error>
+                          Name is <strong>required</strong>
+                        </mat-error>
+                      }
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                      <mat-label>Your Email</mat-label>
+                      <input matInput formControlName="email" placeholder="abc@example.com">
+                      <mat-icon matSuffix>email</mat-icon>
+                      @if (contactForm.get('email')!.errors?.['custom'] && !contactForm.get('email')!.errors?.['required']) {
+                        <mat-error>
+                          Please enter a valid Email
+                        </mat-error>
+                      }
+
+                      @if (contactForm.get('email')!.errors?.['required']) {
+                        <mat-error>
+                          email is <strong>required</strong>
+                        </mat-error>
+                      }
+                    </mat-form-field>
+
+                    <mat-form-field style="margin-right: 15px;" appearance="fill">
+                      <mat-label>Phone Number</mat-label>
+                      <input matInput formControlName="phone" type="tel">
+                      <mat-icon matSuffix>phone</mat-icon>
+                      @if (contactForm.get('phone')!.errors?.['custom'] && !contactForm.get('phone')!.errors?.['required']) {
+                        <mat-error>
+                          Please enter a valid Phone Number
+                        </mat-error>
+                      }
+
+                      @if (contactForm.get('phone')!.errors?.['required']) {
+                        <mat-error>
+                          Phone number is <strong>required</strong>
+                        </mat-error>
+                      }
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                      <mat-label>Subject</mat-label>
+                      <input matInput formControlName="subject">
+                      @if (contactForm.get('subject')!.errors?.['required']) {
+                        <mat-error>
+                          Subject is <strong>required</strong>
+                        </mat-error>
+                      }
+                    </mat-form-field>
+
+                    <div>
+                      <mat-form-field class="message" style="width: 98%;margin-left: 5px;" appearance="fill">
+                        <mat-label>Your Message...</mat-label>
+                        <textarea matInput formControlName="message" style="height: 45px;"></textarea>
+                        @if (contactForm.get('message')!.errors?.['required']) {
+                          <mat-error>
+                            Message is <strong>required</strong>
+                          </mat-error>
+                        }
+                      </mat-form-field>
+                    </div>
+
+                    <button style="width : 98%;margin-left: 5px;height: 50px;" (click)="sendMessage()" mat-raised-button color="primary" [disabled]="!contactForm.valid">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <br><br><br><br><br><br>
+        </div>
