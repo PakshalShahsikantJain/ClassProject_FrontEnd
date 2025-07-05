@@ -1,10 +1,10 @@
-<div style="margin-top: 15%;margin-bottom: 10%;" class="container">
+<div class="container contact-section">
   @for (i of items; track i) {
     <div class="card-container">
       @if (i.title === Title) {
         <mat-card appearance="outlined" class="card card1">
           <mat-card-content>
-            <img mat-image [src]="i.image" style="height: 100%;" alt="image">
+            <img mat-image [src]="i.image" alt="image">
           </mat-card-content>
         </mat-card>
       }
@@ -20,29 +20,30 @@
           <mat-card-content class="content">
             <mat-divider></mat-divider>
             <h2>
-              Start Date : <h3 style="display: inline-block;font-size: medium;">{{i.startDate}}</h3>
+              Start Date:
+              <h3 class="inline-detail">{{i.startDate}}</h3>
             </h2>
             <mat-divider></mat-divider>
             <h2>
-              Duration :
-              <h3 style="display: inline-block;font-size: medium;">{{i.duration}}</h3>
+              Duration:
+              <h3 class="inline-detail">{{i.duration}}</h3>
             </h2>
             <mat-divider></mat-divider>
             <h2>
-              Timings :
-              <h3 style="display: inline-block;font-size:medium;">
-                {{i.Timings}}
-              </h3>
+              Timings:
+              <h3 class="inline-detail">{{i.Timings}}</h3>
             </h2>
             <mat-divider></mat-divider>
             <h2>
-              Fees :
-              <h3 style="display: inline-block;font-size:medium;">
-                {{i.fees | currency:'INR'}}
-              </h3>
+              Fees:
+              <h3 class="inline-detail">{{i.fees | currency:'INR'}}</h3>
             </h2>
-            <button mat-raised-button style="margin-right: 10px;" (click)="DownloadPDF(i.document)" color="accent">Download Contents</button>
-            <button mat-raised-button [hidden]="i.status !== 'Active'" style="margin-right: 10px;" routerLink="/register" color="primary">Register</button>
+            <button mat-raised-button class="btn-download" (click)="DownloadPDF(i.document)" color="accent">
+              Download Contents
+            </button>
+            <button mat-raised-button class="btn-register" [hidden]="i.status !== 'Active'" routerLink="/register" color="primary">
+              Register
+            </button>
           </mat-card-content>
         </mat-card>
       }

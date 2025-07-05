@@ -1,115 +1,124 @@
+/* ========== Spacing Utilities ========== */
 .spacer2 {
-    flex : 0.087 0.087 auto;
-  } 
+  flex: 0.087 0.087 auto;
+}
 
-  .no-underline {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps the default text color */
-    font-size: small;
+/* ========== Link Styling ========== */
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+  font-size: small;
+}
+
+/* ========== Card Section ========== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 3% auto 10%;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.card {
+  /* margin-top: 1rem; */
+  flex: 1 1 calc(30% - 20px);
+  width: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== Icon ========== */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mat-icon {
+    height: auto;
+    width: auto;
   }
+  /* height: auto;          Allow it to grow */
+  /* min-height: 64px;      Set a safe minimum */
+  /* width: 100%; */
+}
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap to the next row */
-    gap: 10px; /* Distribute space evenly between cards */
-    margin-top: 3%;
-    margin-bottom: 10%;
-    justify-content: center;
-    align-items: center;
+.icon {
+  font-size: 50px;
+  line-height: 1;       /* Prevent extra spacing */
+  color: #3f51b5;
+}
 
-  }
-  
+/* ========== Text Styling ========== */
+.title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: monospace;
+  color: #323232;
+  margin: 20px 0 10px;
+}
+
+.paragraph,
+.paragraph2 {
+  text-align: justify;
+  hyphens: auto;             /* Breaks long words if needed */
+  font-size: 1rem;
+  color: #666;
+  margin-top: 20px;
+  line-height: 1.6;
+  padding: 0.5rem;
+  height: auto;
+}
+
+/* ========== Media Queries ========== */
+
+/* Tablet */
+@media screen and (max-width: 1200px) {
   .card {
-    flex: 0 1 calc(30% - 10px); /* Each card takes up 30% of the container width with 10px margin */
-    margin-bottom: 10px; /* Adjust spacing between rows */
-    margin: 10px; /* Adjust spacing around cards */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    margin-bottom: 10px;
+    flex: 1 1 calc(45% - 20px);
+    max-width: calc(45% - 20px);
   }
 
-  .icon-container {
-    display: flex;
-    justify-content: center; /* Center the icon horizontally */
-    align-items: center; /* Center the icon vertically */
+  .paragraph,
+  .paragraph2 {
+    font-size: 15px;
   }
+}
 
-  .icon {
-    font-size: 50px; /* Adjust the size of the icon */
-    color: blue;
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;
+    margin-top: 1rem;
+    max-width: 100%;
   }
 
   .title {
-    text-align: center; /* Center the title text */
-    margin-top: 40px;
-    font-size: xx-large;
-    color: rgb(50, 50, 50);
-    font-family: monospace
-  }
-  
-  
-  .paragraph {
-    text-align: center;
-    font-size: medium;
-    color: rgb(134, 134, 134);
-    margin-top: 40px;
-    height: 150px;
+    font-size: 22px;
   }
 
+  .icon {
+    font-size: 42px;
+  }
+
+  .paragraph,
   .paragraph2 {
-    text-align: center;
-    font-size: medium;
-    color: rgb(134, 134, 134);
-    margin-top: 40px;
-    height: 150px;
+    /* font-size: 14px; */
+    margin-top: 15px;
   }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 1200px) {
-    .card {
-      flex-basis: calc(50% - 50px); /* Each card takes up 50% of the container width with 10px margin */
-      width: 50%;
-    }
-
-    .paragraph {
-      text-align: center;
-      font-size: medium;
-      color: rgb(134, 134, 134);
-      margin-top: 40px;
-      height: 150px;
-    }
-
-    .paragraph2 {
-      text-align: center;
-      font-size: medium;
-      color: rgb(134, 134, 134);
-      margin-top: 40px;
-      height: 150px;
-    }
-  }
-  
-  /* Media query for even smaller screens */
-  @media screen and (max-width: 600px) {
-    .card {
-      flex-basis: calc(100% - 50px); /* Each card takes up 100% of the container width with 10px margin */
-    }
-
-    .paragraph {
-      text-align: center;
-      font-size: small;
-      color: rgb(134, 134, 134);
-      margin-top: 40px;
-      height: 100px;
-    }
-
-    .paragraph2 {
-      text-align: center;
-      font-size: small;
-      color: rgb(134, 134, 134);
-      margin-top: 30px;
-      height: 100px;
-    }
-  }
-  
+}

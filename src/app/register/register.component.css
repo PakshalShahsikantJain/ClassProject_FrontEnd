@@ -1,35 +1,116 @@
-.mat-mdc-option.custom-mat-option {
-  min-height: 24px; /* Adjust this value as per your requirement */
-}
+/* Toolbar */
+.toolbar {
+  background-color: #003366;
+  color: white;
+  display: flex;
+  padding: 0 16px;
 
-.spacer2 {
-    flex : 0.087 0.087 auto;
+  .toolbar-title {
+    font-size: 1.5rem;
+  }
+  .spacer2 {
+    flex : 0.12 0.12 auto;
   } 
+}
 
-  .no-underline {
-    font-size: small;
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps the default text color */
-  }
-  .container {
-    margin-top: 5%;
-    justify-content: center;
-  }
+/* Container holding the card */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 5% 16px;
+  box-sizing: border-box;
+}
 
-.example-container {
+/* Form Card */
+.form-card {
+  width: 100%;
+  /* background-color: ; */
+  max-width: 1200px;
+  padding: 5rem;
+  box-sizing: border-box;
+  border-radius: 50px;
+
+  /* Shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Grid Layout */
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  gap: 10px 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:host ::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 1rem;
+  /* background-color: white; */
+  /* overflow: auto; */
+}
+
+:host ::ng-deep .mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 1rem;
+  /* background-color: white; */
+}
+
+/* Material Form Field width */
+mat-form-field {
+  width: 100%;
+}
+
+/* Center the Submit Button and Note */
+.submit-section {
+  grid-column: 1 / -1;
   text-align: center;
-}
-.example-container .mat-mdc-form-field + .mat-mdc-form-field {
-  margin-left: 8px;
-}
+  margin-top: 32px;
 
-.example-container .mat-mdc-form-field {
-  width: 300px;
-}
-
-@media screen and (max-width : 600px) {
-  .container {
-    align-items: center;
+  button {
+    width: 100%;
+    border-radius: 50px;
+    max-width: 20rem;
   }
 }
-  
+
+.note {
+  display: block;
+  margin-top: 16px;
+  /* color: #b00020; */
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Tablet: 2-column layout */
+@media screen and (max-width: 800px) {
+  .form-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-card {
+    padding: 3rem;
+    border-radius: 32px;
+  }
+}
+
+/* Mobile: 1-column layout */
+@media screen and (max-width: 600px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+
+  .toolbar {
+    padding: 12px;
+    
+    .toolbar-title {
+      /* text-align: center; */
+      font-size: 1.25rem;
+      /* margin-left: auto;
+      margin-right: auto; */
+    }
+  }
+}

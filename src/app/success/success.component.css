@@ -1,26 +1,68 @@
-.example-card {
-    margin-top: 10%;
-    margin-bottom: 10%;
+
+.confirmation-card {
+    margin: 10% 5%;
+    padding: 2rem;
     border: none;
     box-shadow: none;
-}
-
-.example-card .title{
-    font-family: monospace;
-    font-size: 30px;
-}
-
-@media screen and (max-width : 600px) {
-
-    .example-card {
-        margin-top: 30%;
+    width: auto;
+    background-color: #f8f5f5;
+    border-left: 6px solid #3f51b5;
+    border-radius: 8px;
+  }
+  
+  .card-title {
+    font-family: "Fira Code", monospace;
+    font-size: 2rem;
+    padding-left: 1rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 2rem;    
+  }
+  
+  .message p {
+    font-family: "Fira Code", monospace;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  mat-card-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  mat-card-actions button {
+    padding: 0.6rem 1.4rem;
+    width: 10rem;
+    font-weight: bold;
+    font-family: "Fira Code", monospace;
+    border-radius: 8px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .confirmation-card {
+      margin-top: 10rem;
+      padding: 1.5rem;
     }
-    .example-card .title{
-        font-family: monospace;
-        font-size: 20px;
+  
+    .card-title {
+      font-size: 1.2rem;
     }
-
-    .example-card h2 {
-        font-size: large;
+  
+    .message p {
+      font-size: 0.9rem;
     }
-}  
+  
+    mat-card-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    mat-card-actions button {
+      width: 100%;
+    }
+  }
+  

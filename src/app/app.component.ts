@@ -13,7 +13,7 @@ import { MatCard, MatCardTitle, MatCardContent } from '@angular/material/card';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [LoadingComponent, MatToolbar, MatIconButton, MatMenuTrigger, MatIcon, MatButton, RouterLink, MatMenu, MatMenuItem, RouterOutlet, MatCard, MatCardTitle, MatCardContent, AsyncPipe]
+    imports: [LoadingComponent, MatToolbar, MatIconButton, MatMenuTrigger, MatIcon, MatButton, RouterLink, MatMenu, MatMenuItem, RouterOutlet, AsyncPipe]
 })
 export class AppComponent {
   loadingService = inject(LoadingService);

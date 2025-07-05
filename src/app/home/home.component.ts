@@ -5,7 +5,6 @@ import { LoadingService } from '../services/loading-page/loading.service';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { MatDivider } from '@angular/material/divider';
-import { MatCard, MatCardContent, MatCardImage } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { AboutusComponent } from '../aboutus/aboutus.component';
@@ -14,7 +13,7 @@ import { AboutusComponent } from '../aboutus/aboutus.component';
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
-    imports: [CarouselModule, MatDivider, MatCard, MatCardContent, MatCardImage, MatButton, RouterLink, AboutusComponent]
+    imports: [CarouselModule, MatDivider, MatButton, RouterLink, AboutusComponent]
 })
 export class HomeComponent implements OnInit {
   private scroll = inject(ScrollToTopService);

@@ -2,21 +2,26 @@
   <app-loading />
 }
 <div>
-  <mat-toolbar color="primary" style="height: 80px;    ;position: fixed;top: 0;left: 0;width: 100%;z-index: 1000;">
+  <mat-toolbar color="primary" class="main-toolbar">
     <span class="spacer2"></span>
-    <img src="assets/logo.png" style="height: 80px;">
-    <span style="font-family: monospace;font-size: larger;">PROGRAMMER'S DEN</span>
+    <img src="assets/logo.png" class="logo" alt="Logo">
+    <span class="site-title">PROGRAMMER'S DEN</span>
     <span class="spacer"></span>
+
     @if (isCollapsed) {
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="mat-menu-button">
         <mat-icon>more_vert</mat-icon>
       </button>
     }
+
     @if (!isCollapsed) {
-      <button mat-button routerLink="/home">HOME</button>
-      <button mat-button routerLink="/contact">CONTACT US</button>
-      <button mat-button routerLink="/register" style="background-color: white;color: black;">REGISTER</button>
+      <div class="toolbar-button-group">
+        <button mat-button routerLink="/home" class="toolbar-btn">HOME</button>
+        <button mat-button routerLink="/contact" class="toolbar-btn">CONTACT US</button>
+        <button mat-button routerLink="/register" class="toolbar-btn">REGISTER</button>
+      </div>
     }
+
     <span class="spacer2"></span>
   </mat-toolbar>
 
@@ -35,78 +40,64 @@
 </div>
 
 <mat-toolbar class="footer-toolbar">
-  <!-- Contact Info Card -->
-  <mat-card appearance="outlined" class="footer-card">
-    <mat-card-title>Contact Info</mat-card-title>
-    <mat-card-content>
+  <div class="footer-section">
+    <h3 class="footer-title">Contact Info</h3>
+    <div class="footer-content">
       <div class="contact-item">
         <mat-icon class="icon">location_on</mat-icon>
         <span class="label">
-          ADDRESS : <br>
-          Rhythm Residency, Talegaon Dabhade, Pune
+          Rhythm Residency,<br>Talegaon Dabhade, Pune
         </span>
       </div>
-      <br>
-        <div class="contact-item">
-          <mat-icon class="icon">
-            <a href="tel:7058102806" style="text-decoration: none;color:white">phone</a>
-          </mat-icon>
-          <span class="label">
-            PHONE : <br>
-            +91 7058102806
-          </span>
-        </div>
-        <br>
-          <div class="contact-item">
-            <mat-icon class="icon">
-              email
-            </mat-icon>
-            <span class="label">
-              EMAIL :<br>
-              pakshal1256&#64;gmail.com
-            </span>
-          </div>
-        </mat-card-content>
-      </mat-card>
 
-      <!-- Social Media Card -->
-      <mat-card appearance="outlined" class="footer-card">
-        <mat-card-title>Social Media</mat-card-title>
-        <mat-card-content>
-          <div class="social-icons">
-            <a href="#" class="icon-link">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="icon-link">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="icon-link">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://wa.me/7058102806" class="icon-link">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="#" class="icon-link">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <div class="contact-item">
+        <a href="tel:7058102806" class="no-underline">
+          <mat-icon class="icon">phone</mat-icon>
+        </a>
+        <span class="label">
+          +91 7058102806
+        </span>
+      </div>
 
-      <!-- About Us Card -->
-      <mat-card appearance="outlined" class="footer-card" style="margin-top: 1%;">
-        <mat-card-title>Location</mat-card-title>
-        <mat-card-content>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.9609389864772!2d73.67613618072286!3d18.719633637065883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b10032b7f3c9%3A0xc7174ad0afa6e089!2sRhythm%20Residency!5e1!3m2!1sen!2sin!4v1713209373868!5m2!1sen!2sin" allowfullscreen="" style="border: 0; width: 100%; height: 300px;">
-          </iframe>
-        </mat-card-content>
-      </mat-card>
-    </mat-toolbar>
-    <mat-toolbar style="background-color: rgb(48, 48, 48);color: white;justify-content: center;">
-      <p style="font-size: medium;">
-        <mat-icon style="font-size: medium;">copyright</mat-icon>
-        Copyright 2024 Programmer's Den
-      </p>
-    </mat-toolbar>
+      <div class="contact-item">
+        <a href="mailto:programmersden1256@gmail.com" class="no-underline">
+          <mat-icon class="icon">email</mat-icon>
+        </a>
+        <span class="label">
+          programmersden1256&#64;gmail.com
+        </span>
+      </div>
+    </div>
+  </div>
 
+  <div class="footer-section">
+    <h3 class="footer-title">Social Media</h3>
+    <div class="footer-content social-icons">
+      <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="icon-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon-link"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/7058102806" class="icon-link"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="icon-link"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-section">
+    <h3 class="footer-title">Location</h3>
+    <div class="footer-content">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.9609389864772!2d73.67613618072286!3d18.719633637065883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b10032b7f3c9%3A0xc7174ad0afa6e089!2sRhythm%20Residency!5e1!3m2!1sen!2sin!4v1713209373868!5m2!1sen!2sin"
+        allowfullscreen=""
+        class="map-frame"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-toolbar class="bottom-bar">
+  <p class="bottom-text">
+    <mat-icon class="bottom-icon">copyright</mat-icon>
+    Copyright 2024 Programmer's Den
+  </p>
+</mat-toolbar>

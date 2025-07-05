@@ -7,7 +7,7 @@ import { MatIcon } from '@angular/material/icon';
     selector: 'app-aboutus',
     templateUrl: './aboutus.component.html',
     styleUrls: ['./aboutus.component.css'],
-    imports: [MatCard, MatCardHeader, MatCardAvatar, MatIcon, MatCardContent, MatCardTitle]
+    imports: [MatCard, MatIcon, MatCardContent, MatCardTitle]
 })
 
 export class AboutusComponent implements OnInit {

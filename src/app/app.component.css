@@ -1,3 +1,59 @@
+.main-toolbar {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  height: 80px;
+}
+
+.toolbar-button-group {
+  display: flex;
+  gap: 12px;
+}
+
+.toolbar-btn {
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 50px;
+}
+
+.toolbar-btn:hover {
+  background-color: #ffffff33; /* light transparent white overlay */
+  color: #fff;
+}
+
+
+.site-title {
+  font-family: monospace;
+}
+
+.bottom-bar {
+  background-color: rgb(48, 48, 48);
+  color: white;
+  justify-content: center;
+}
+
+.bottom-text {
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bottom-icon {
+  font-size: medium;
+}
+
+.map-frame {
+  border: 0;
+  width: 100%;
+  height: 300px;
+}
 
 .spacer {
     flex: 1 1 auto;
@@ -44,126 +100,173 @@
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    background-color: rgb(78, 78, 78);
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4e4e4e;
+    color: white;
+    text-align: left;
   }
   
-  .footer-card {
-    flex-basis: calc(30% - 10px); /* Adjust width as needed, considering margins */
-    border: none;
-    box-shadow: none;
-    max-width: 500px; /* Limiting the max-width of cards */
-    background-color: rgb(78, 78, 78);
+  .footer-section {
+    flex: 1 1 300px;
+    max-width: 400px;
+    margin: 10px;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
     color: white;
   }
-
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
   .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .icon {
-    display: inline-flex; /* Ensure the icon stays inline */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-    border-radius: 50%; /* Make the border rounded to create a circle */
-    width: 40px; /* Set the width of the icon */
-    height: 40px; /* Set the height of the icon */
-    color: white;
-    font-size: x-large;
-  }
-
-  .label {
-    font-size: medium;
-    margin-left: 2%;
+    gap: 12px; /* adjust spacing between icon and text */
+    margin-bottom: 20px;  
   }
   
-  .footer-card .mat-mdc-card-content p {
-    font-size: large;
-  }
-
-  .social-icons {
-    display: flex; /* Use flexbox to arrange icons horizontally */
-    flex-wrap: wrap;
-    flex-direction: column;
-    font-size: larger;
-  }
-
-  .icon-link {
-    margin-right: 20px; /* Add margin between icons */
-     /* Icon color */
-    text-decoration: none; /* Remove underline */
-    font-size: x-large;
-
-    display: inline-flex; /* Ensure the icon stays inline */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    border: 1px solid rgb(165, 164, 164);
+  .icon {
+    border: 1px solid #a5a4a4;
     border-radius: 50%;
-    width: 40px; /* Set the width of the icon */
-    height: 40px; /* Set the height of the icon */
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    margin-bottom: 5%;
+    flex-shrink: 0; 
   }
+  
+  .label {
+    font-size: medium;
+    color: white;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+  }
+  
+  .no-underline {
+    color: inherit;
+    font-size: medium;
+    text-decoration: none;
+  }
+  
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .icon-link {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #a5a4a4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    transition: background-color 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    background-color: #ffffff22;
+  }
+  
+  .map-frame {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .bottom-bar {
+    background-color: #3a3a3a;
+    text-align: center;
+    color: white;
+    padding: 10px;
+  }
+  
+  .bottom-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .bottom-icon {
+    font-size: small;
+  }
+  
 
-  @media screen and (max-width: 600px) {
-    .footer-toolbar {
-      height: 900px;
-    }
-
+  @media screen and (max-width: 600px) {  
     .footer-card {
-      flex-basis: calc(100%); /* Adjust width for smaller screens */
-      margin-left: -5%;
+      flex-basis: 100%;
+      margin-left: 0;
       max-width: 100%;
     }
-
+  
     .footer-card .mat-mdc-card-content p {
       font-size: small;
     }
-
-    .icon {
-      display: inline-flex; /* Ensure the icon stays inline */
-      align-items: center; /* Center icon vertically */
-      justify-content: center; /* Center icon horizontally */
-      border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-      border-radius: 50%; /* Make the border rounded to create a circle */
-      width: 40px; /* Set the width of the icon */
-      height: 40px; /* Set the height of the icon */
-      font-size: large;
-      margin-bottom: 4%;
-    }
-
+  
     .contact-item {
       display: flex;
       align-items: center;
-      margin-bottom: -20px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
-
-    .label {
-      font-size: small;
-      margin-left: 5%;
-    }
-
-    .social-icons {
-      display: flex; /* Use flexbox to arrange icons horizontally */
-      flex-direction: row;
-    }
-    .icon-link {
-      margin-right: 20px; /* Add margin between icons */
-       /* Icon color */
-      text-decoration: none; /* Remove underline */
-      font-size: large;
   
-      display: inline-flex; /* Ensure the icon stays inline */
-      align-items: center; /* Center icon vertically */
-      justify-content: center; /* Center icon horizontally */
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 1px solid rgb(165, 164, 164);
       border-radius: 50%;
-      width: 40px; /* Set the width of the icon */
-      height: 40px; /* Set the height of the icon */
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+  
+    .label {
       color: white;
-      margin-bottom: 5%;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+  
+    .social-icons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  
+    .icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgb(165, 164, 164);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
     }
   }
+  
   

@@ -1,152 +1,205 @@
 .spacer2 {
-    flex : 0.087 0.087 auto;
-  } 
+  flex: 0.087 0.087 auto;
+}
 
-  .no-underline {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Keeps the default text color */
-    font-size: small;
-  }
 
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  
+}
+
+@media screen and (max-width: 600px) {
   .card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns layout */
-    gap:20px; /* Gap between cards */
-  
-    /* Adjust layout for smaller screens */
-    @media screen and (max-width: 600px) {
-      grid-template-columns: 1fr; /* Change to single column layout */
-    }
+    grid-template-columns: 1fr;
   }
-  
+}
+
+.contact-item {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: center;
+  border: 1px solid rgb(165, 164, 164);
+  border-radius: 50%;
+  padding: 2rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.label {
+  display: flex;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  padding-left: 0.8rem;
+}
+
+.card1 {
+  flex: 1 1 100%;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+}
+
+.card2 {
+  flex: 1 1 700px;
+  width: 700px;
+  padding: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Grid Layout */
+.form-container {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(2 , 1fr);
+  gap: 10px 15px;
+  width: 100%;
+  box-sizing: border-box;
+
+  .message-field {
+    grid-column: 1 / -1;
+  }
+}
+
+:host ::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
+  border-radius: 1rem;
+  /* background-color: white; */
+  /* overflow: auto; */
+}
+
+:host ::ng-deep .mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 1rem;
+  /* background-color: white; */
+}
+
+/* Material Form Field width */
+mat-form-field {
+  width: auto;
+}
+
+.icon-link {
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(165, 164, 164);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  /* color: black; */
+}
+
+.social-icons {
+  display: flex;
+  padding: 1rem;
+}
+
+.icon-link:last-child {
+  margin-right: 0;
+}
+
+.map-container iframe {
+  border: 0;
+  width: 100%;
+  height: 300px;
+}
+
+.breadcrumb-toolbar {
+  background-color: rgb(232, 231, 231);
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  font-size: 1rem;
+  /* color: black; */
+}
+
+.breadcrumb-separator {
+  font-size: small;
+  padding: 0.2rem;
+  color: grey;
+}
+
+.contact-section {
+  /* margin-top: 10%; */
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.card-heading {
+  font-family: monospace;
+  font-size: xx-large;
+}
+
+.submit-button {
+  width: 98%;
+  border-radius: 50px;
+  margin-left: 5px;
+  height: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
   .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
+    flex-direction: row;
+    margin-left: -1.5rem;
   }
-  
+
+  .contact-section {
+    /* margin-top: 10%; */
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 0rem;
+    grid-template-columns: repeat(1 , 1fr);
+  }
+
+  .message {
+    width: 100%;
+  }
+
+
   .icon {
-    display: inline-flex; /* Ensure the icon stays inline */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-    border-radius: 50%; /* Make the border rounded to create a circle */
-    width: 40px; /* Set the width of the icon */
-    height: 40px; /* Set the height of the icon */
+    margin-right: 0;
   }
-  
+
   .label {
-    font-size: 16px;
-    margin-left: 5%;
-  }
-  
-  .card1 {
-    flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis */
+    font-size: 0.9rem;
+    text-align: justify;
   }
 
-  /* Card 2 takes 600px width */
-  .card2 {
-    flex: 1 1 700px; /* Flex-grow, flex-shrink, flex-basis */
-    width: 700px; /* Set a max-width to ensure it doesn't exceed 600px */
-  }
-  
-  .example-container .mat-mdc-form-field + .mat-mdc-form-field {
-    margin-left: 5px;
-  }
-  
-  .example-container .mat-mdc-form-field {
-    width: 316px;
-  }
-  
-  .example-container form {
-    margin-bottom: 20px;
-  }
-  
-  .example-container form > * {
-    margin: 5px 0;
-  }
-  
-  .example-container .mat-mdc-radio-button {
-    margin: 0 12px;
-  }
-  
-  .icon-link {
-    margin-right: 20px; /* Add margin between icons */
-     /* Icon color */
-    text-decoration: none; /* Remove underline */
-    font-size: x-large;
-
-    display: inline-flex; /* Ensure the icon stays inline */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-    border-radius: 50%; /* Make the border rounded to create a circle */
-    width: 40px; /* Set the width of the icon */
-    height: 40px; /* Set the height of the icon */
-  }
-  /* Media query for smaller screens */
-  @media screen and (max-width: 1270px) {
-    .contact-item {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      align-items: flex-start;
-    }
-
-    .card {
-      width: 100%; /* Stack cards vertically for smaller screens */
-    }
-    
-    .message {
-      width: 100%;
-    }
-    .example-container .mat-mdc-form-field {
-      width: 100%;
-    }
-
-    .example-container .mat-mdc-form-field + .mat-mdc-form-field {
-      width: 100%;
-    }
-    .card {
-      width: 100%; /* Stack cards vertically for smaller screens */
-    }
-
-    .icon {
-      display: inline-flex; /* Ensure the icon stays inline */
-      align-items: center; /* Center icon vertically */
-      justify-content: center; /* Center icon horizontally */
-      border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-      border-radius: 50%; /* Make the border rounded to create a circle */
-      width: 40px; /* Set the width of the icon */
-      height: 40px; /* Set the height of the icon */
-      margin-right: 0%;
-    }
-
-    .label {
-      font-size: 16px;
-      margin-left: 0%;
-      margin-top: 2%;
-      margin-bottom: -5%;
-    }
-    .icon-link {
-      margin-right: 20px; /* Add margin between icons */
-       /* Icon color */
-      text-decoration: none; /* Remove underline */
-      font-size: large;
-  
-      display: inline-flex; /* Ensure the icon stays inline */
-      align-items: center; /* Center icon vertically */
-      justify-content: center; /* Center icon horizontally */
-      border: 1px solid rgb(165, 164, 164); /* Add border around the icon */
-      border-radius: 50%; /* Make the border rounded to create a circle */
-      width: 40px; /* Set the width of the icon */
-      height: 40px; /* Set the height of the icon */
-    }
-  
-  }
-  
   .social-icons {
-    display: flex; /* Use flexbox to arrange icons horizontally */
+    margin-left: -1.5rem;
   }
-    
-  .icon-link:last-child {
-    margin-right: 0; /* Remove margin from the last icon */
+  .icon-link {
+    margin-right: 20px;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(165, 164, 164);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    /* color: black; */
   }
+}
